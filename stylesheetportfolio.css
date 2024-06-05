@@ -1,23 +1,43 @@
 body {
     margin: 0;
-    font-family: 'Avenir Next';
+    font-family: 'Avenir Next', sans-serif;
     color: #333;
     background-color: #FFFFFF;
-	position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     text-align: center;
 }
 
-.title{
-    font-size: 2.8em;
-    margin-bottom: -3%;
+.container {
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
 }
 
-.titleDesc{
-    margin-bottom: 10%;
+header {
+    margin-bottom: 10px;
 }
+
+header h1 {
+    font-size: 2.8em;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    align-items: center;
+}
+
 .minimal-button {
     background-color: #ffffff; /* White background */
     color: #333333; /* Dark text color */
@@ -28,7 +48,10 @@ body {
     cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s, color 0.3s, transform 0.2s; /* Smooth transitions */
     outline: none;
-	text-decoration: none;
+    text-decoration: none;
+    display: inline-block;
+    width: 100px; /* Fixed width for buttons */
+    margin: 5px 0; /* Reduce margin */
 }
 
 .minimal-button:hover {
@@ -42,121 +65,26 @@ body {
     color: #ffffff; /* White text on click */
     transform: translateY(0); /* Reset lift on active */
 }
-/* Container */
-.container {
-    width: 80%;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 20px;
-}
 
-/* Header */
-header {
-    background-color: #007BFF;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
-
-/* Navigation */
-nav {
-    text-align: center;
-    margin: 20px 0;
-}
-
-nav a {
-    color: #007BFF;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Main Content */
-main {
-    text-align: center;
-    padding: 50px 0;
-}
-
-main h2 {
-    color: #007BFF;
-    margin-bottom: 20px;
-    font-size: 2em;
-}
-
-main p {
-    max-width: 700px;
-    margin: 20px auto 20px auto;
-    line-height: 1.6;
-}
-
-/* Portfolio Section */
-.portfolio {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.portfolio-item {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin: 10px;
-    width: calc(33% - 40px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.portfolio-item:hover {
-    transform: translateY(-5px);
-}
-
-.portfolio-item img {
-    max-width: 100%;
-    border-bottom: 1px solid #ddd;
-    border-radius: 5px 5px 0 0;
-}
-
-.portfolio-item h3 {
-    padding: 10px;
-    font-size: 1.5em;
-    color: #007BFF;
-}
-
-.portfolio-item p {
-    padding: 0 10px 10px 10px;
-    font-size: 1em;
-    color: #666;
-}
-
-/* Footer */
 footer {
-    background-color: #007BFF;
-    color: white;
+    background-color: #f1f1f1;
+    color: #333;
     text-align: center;
     padding: 10px 0;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
 }
 
-footer p {
-    margin: 0;
-}
-.background-photo {
-    background-image: url('path/to/your/photo.jpg');
-    background-size: cover; /* Ensures the background covers the entire element */
-    background-repeat: no-repeat; /* Prevents the background from repeating */
-    background-position: center; /* Centers the background image */
-    width: 100%;
-    height: 100vh; /* Adjusts the height to cover the full viewport height */
-}/* CSS Document */
+/* Ensure responsiveness */
+@media (min-width: 768px) {
+    nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
+    .minimal-button {
+        margin: 10px;
+    }
+}
